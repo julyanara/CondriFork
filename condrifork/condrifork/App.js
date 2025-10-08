@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SafeAreaView } from 'react-native';
+import { View } from 'react-native';
 
 // Importando as telas
 import { TelaInicial } from './TelaInicial';
@@ -14,11 +14,11 @@ export default function App() {
   const irPara = (nomeTela) => setTela(nomeTela);
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
       {tela === 'inicio' && <TelaInicial irPara={irPara} />}
       {tela === 'jogo' && <Jogo irPara={irPara} />}
       {tela === 'ganhou' && <TelaGanhou irPara={irPara} />}
       {tela === 'gameover' && <GameOver irPara={irPara} />}
-    </SafeAreaView>
+    </View>
   );
 }

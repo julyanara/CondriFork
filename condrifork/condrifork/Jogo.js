@@ -92,23 +92,18 @@ export function Jogo({ irPara }) {
 
   return (
     <View style={stylesJO.containerJogo}>
-      {/* Pergunta */}
       <View style={stylesJO.caixaPergunta}>
         <Text style={stylesJO.pergunta}>{perguntaAtual}</Text>
       </View>
-      
-      {/* Forca */}
       <Forca exibir={situacao} />
-      
-      {/* Palavra e teclado (desabilitado se gameOver) */}
       <View style={{ alignItems: 'center' }}>
         <Text style={stylesJO.palavra}>{montaPalavra()}</Text>
         <Teclado 
           letras={letrasAdvinhadas} 
           valida={validarPalpite} 
-          desabilitado={gameOver}  // Novo: Passe prop para desabilitar cliques no Teclado
+          desabilitado={gameOver} 
         />
-        {gameOver && <Text style={{ color: 'red', fontSize: 18 }}>Game Over!</Text>}  {/* Feedback visual opcional */}
+        {gameOver && <Text style={{ color: 'red', fontSize: 18 }}>Game Over!</Text>}
       </View>
     </View>
   );
